@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import TicketList from './TicketList'
+import Loading from '../Loading'
 
 const page = () => {
   return (
@@ -10,7 +11,9 @@ const page = () => {
             </h2>
                 <p><small>Currently open tickets</small></p>
         </nav>
-        <TicketList/>
+        <Suspense fallback={<Loading/>}>
+          <TicketList />
+        </Suspense>
     </main>
   )
 }
