@@ -17,7 +17,6 @@ export default async function TicketList() {
     await new Promise(resolve => setTimeout((resolve),3000))
 
     const tickets = await getTickets()
-    console.log("This is",tickets)
   return (
     <>
     {tickets.map((ticket)=>(
